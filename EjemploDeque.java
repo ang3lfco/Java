@@ -31,5 +31,16 @@ public class EjemploDeque {
         historial.push("Pegar");
         System.out.println(historial.pop()); // pegar
         System.out.println(historial.pop()); // borrar
+
+        /* otro caso real - ventana deslizante */
+        Deque<Integer> ventana = new ArrayDeque<>();
+        int[] nums = {1, 3, -1, -3, 5};
+        for(int n : nums){
+            ventana.addLast(n);
+            if(ventana.size() > 3){
+                ventana.pollFirst();
+            }
+            System.out.println(ventana);
+        }
     }
 }

@@ -28,6 +28,17 @@ public class EjemploPriorityQueue {
         tareas.offer(new Tarea("Refactor", 2));
         System.out.println(tareas.poll().nombre); // --> bug crítico
 
+        /*  En PriorityQueue solo el primer elemento es correcto
+            solo se garantiza que el elemento que sale con peek o poll
+            es el de mayor prioridad segun el criterio definido
+            
+            en este caso por ejemplo: [1, 2, 3, 5] ó [1, 3, 2, 5]
+            ambos son válidos, java no promete que el resto
+            esté ordenado.
+
+            Todo esto se debe a que PriorityQueue usa un heap binario,
+            no una lista ordenado. Un heap solo garantiza: Padre <= Hijos
+        */
     }
 
     static class Tarea{
